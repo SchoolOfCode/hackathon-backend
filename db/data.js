@@ -1,14 +1,14 @@
 export const Data = [
     {
         id:1,
-        title:"Testing is crazy",
+        title:"Clean my room",
     },
     {
         id:2,
-        title:"Testing is crazy",
+        title:"Gardening",
     },
     {
         id:3,
-        title:"Testing is crazy",
+        title:"Laundry",
     }
 ]
