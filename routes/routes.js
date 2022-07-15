@@ -1,23 +1,26 @@
 import express from "express";
-import { getAllTodos } from "../models/todos.js";
-
+import { getAllTodos, getTodoById} from "../models/todos.js";
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  const data = getAllTodos();
+  res.json({ success: true, payload: data });
+});
 
-router.get('/', (req, res) => {
-    const data = getAllTodos()
-    res.json({success: true, payload: data})})
+router.get("/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const todo = getTodoById(id);
+  res.json({ success: true, payload: todo });
+});
 
-    router.get(':/id', (req, res) => {
-        console.log(req.params)
-        const data = getTodoById(id)
-        res.json({success: true, payload: data})})
+// router.post("/", function (req, res) {
+//     const newTodo= req.body
+//     const result = createTodo(newTodo)
+//     res.json({ success: true, payload: result });
+// })
+ export default router;
 
+// get todos
 
-    export default router;
-
-
-    // get todos 
-
-// 
+//
