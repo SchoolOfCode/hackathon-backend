@@ -1,7 +1,7 @@
 import express from "express";
+import router from "./routes/routes.js";
 var app = express();
 var PORT = 3000;
-import router from "./routes/routes.js";
 
 
 app.use("/", router);
